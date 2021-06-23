@@ -1,38 +1,38 @@
--- mem_id,m_name,age,email
+-- mem_id,m_name,age,email (Change The mem_username)
 
 SELECT mem_id AS mem_id,m_Fname,m_Lname,gender,TIMESTAMPDIFF(YEAR, dob, CURDATE()) AS age,m_Pno AS Contact
 FROM Gym_db.m_profile 
-WHERE mem_id = (SELECT m_id FROM Gym_db.members WHERE m_username = 'ag6894');
+WHERE mem_id = (SELECT m_id FROM Gym_db.members WHERE m_username = 'mem_username');
 
 
--- mem_contact AND mem_address
+-- mem_contact AND mem_address (After Getting mem_id of your username)
 
-SELECT mem_id,House_no,Street_name,Area_name,City,Pincode FROM Gym_db.m_address WHERE mem_id = 12;
+SELECT mem_id,House_no,Street_name,Area_name,City,Pincode FROM Gym_db.m_address WHERE mem_id = (mem_id);
 
 -- membership plan and duration
 
 Select Pname,Duration 
 FROM Gym_db.plans 
-WHERE pid = (SELECT plan_id FROM Gym_db.m_profile WHERE mem_id = 12);
+WHERE pid = (SELECT plan_id FROM Gym_db.m_profile WHERE mem_id = (mem_id));
 
 -- Trainer Name
 
 Select T_name 
 FROM Gym_db.Trainer 
-WHERE t_id = (SELECT trainer_id FROM Gym_db.m_profile WHERE mem_id = 12);
+WHERE t_id = (SELECT trainer_id FROM Gym_db.m_profile WHERE mem_id = (mem_id));
 
 -- Member Diet Routine
 
 Select date AS workout_date,Diet_Type,Calories,Proteins,Carbs,Fats,Supplement_Type,Supplement_Quantity 
 FROM Gym_db.mem_diet_routine
-WHERE mem_id = 12
+WHERE mem_id = (mem_id)
 ORDER BY date;
 
 -- Mem Stats
 
 SELECT date,m_weight,m_chest,m_biceps,m_shoulders,m_glutes
 FROM Gym_db.mem_stats
-WHERE m_id = 12
+WHERE m_id = (mem_id)
 ORDER BY date;
 
 -- Mem Workout Details And Duration
@@ -41,4 +41,4 @@ SELECT m_id,DATE(w_date) AS DATE,w_type,w_duration,w_routine
 FROM Gym_db.mem_workout_rou
 INNER JOIN Gym_db.workouts
 ON Gym_db.mem_workout_rou.w_id = Gym_db.workouts.w_id
-WHERE m_id = 12;
+WHERE m_id = (mem_id);
