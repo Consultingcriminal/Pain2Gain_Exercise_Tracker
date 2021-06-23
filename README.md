@@ -29,7 +29,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 <p align="center">
-<img src="images/gym_db.png" alt="Logo" width="580" height="540">
+<img src="images/gym_db.png" alt="Logo" width="620" height="580">
 
 The learning objective behind this project was to design a Relational Database For a Gymnasium ; Tracking the progress of its members including their workout regime , diet plans and body statistics.
 
