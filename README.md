@@ -3,8 +3,7 @@
   <h2 align="center">Pain2Gain Exercise Tracker</h2>
 
   <p align="center">
-    Monitor your workouts,diet plans and body stats.
-    A RDBMS implmentation using MySql
+    Monitor your workouts,diet plans and body stats,a RDBMS implmentation using MySql
     <br />
   </p>
 </p>
