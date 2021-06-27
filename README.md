@@ -4,6 +4,7 @@
 
   <p align="center">
     Monitor your workouts,diet plans and body stats.
+    A RDBMS implmentation using MySql
     <br />
   </p>
 </p>
